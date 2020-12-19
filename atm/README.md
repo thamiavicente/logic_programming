@@ -9,9 +9,8 @@
 <p> In this simple code, you can withdraw any cash value of your choice. </p>
 <p> The program draws as few notes as possible. </p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/logic_programming/atm/atm.html)
-- [Code](https://thamiavicente.github.io/logic_programming/atm)
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/atm/atm.html)
+
 
 ## :arrow_forward: How to run the code
 <p>1. Clone the repository to your machine</p>
