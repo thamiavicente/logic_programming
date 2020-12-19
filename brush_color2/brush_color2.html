@@ -1,0 +1,101 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas> <!-- Criando a área de interação -->
+
+<script>
+
+    function drawSquare(x, y, size, color) { //Criando função que cria um quadrado
+
+        brush.fillStyle = color; //Escolhe a cor pelo parâmetro da função
+        brush.fillRect(x, y, size, size); //Configura o tmanho pelo parâmetro da função
+        brush.fill(); //Preenche a forma criada
+    }
+
+    function drawCircle(x, y, radius, color) { //Função que desenha círculos
+
+        brush.fillStyle = color;
+        brush.beginPath();
+        brush.arc(x, y, radius, 0, 2 * 3.14);
+        brush.fill();
+
+    }
+
+    function drawColorPalette() { //Função para criar a paleta de cores
+
+        drawSquare(xRed, ySquares, sizeSquares, 'red'); //Cria um quadrado vermelho
+        drawSquare(xGreen, ySquares, sizeSquares, 'green'); //Um verde
+        drawSquare(xBlue, ySquares, sizeSquares, 'blue'); //E um azul
+
+    }
+
+    function treatMouseMove(event) { //Função para tratar o movimento do mouse
+
+        var x = event.pageX - screen.offsetLeft; //Captura o x do local do click menos a área fora da área de desenho
+        var y = event.pageY - screen.offsetTop; //Faz o mesmo com o y
+
+        if(draw && canDraw(x, y)) { //Se draw for verdadeiro
+
+            drawCircle(x, y, 5, currentColor); //O círculo é desenhado com a cor atual
+        }
+    }
+
+    function enableDraw() { //Aqui habilita desenhar setando o draw como true
+        draw = true;
+    }
+
+    function disableDraw() {// E aqui desabilita, colocando false
+        draw = false;
+    }
+
+    function canDraw(x, y) { //Função para verificar se a área pode desenhar
+        if (x >= 0 && x < 3*sizeSquares && y >= 0 && y < sizeSquares) { //Não pode desenhar se estiver em cima da paleta de cores
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function getColor(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+
+        if (y > ySquares && y < ySquares + sizeSquares) { //Como o y é o mesmo para todos, usamos o mesmo para todos
+
+            if (x > xRed && x < xRed + sizeSquares) { //Se o click ocorrer na área do quadrado vermelho
+                currentColor = 'red'; //A cor atual se torna vermelho
+
+            } else if (x > xGreen && x < xGreen + sizeSquares) { //O mesmo acontece para os outros quadrados
+                currentColor = 'green'; //Na cor verde 
+            
+            } else if (x > xBlue && x < xBlue + sizeSquares) {
+            currentColor = 'blue'; //E na cor azul
+            }
+        }
+    }
+
+
+    var screen = document.querySelector('canvas'); //Constrói a área de desenho
+    var brush = screen.getContext('2d');
+    brush.fillStyle = 'lightgray';
+    brush.fillRect(0, 0, 600, 400);
+
+    var draw = false; //Iniciando as váriáveis
+    var currentColor = 'blue';
+    var xRed = 0;
+    var xGreen  = 50;
+    var xBlue = 100;
+    var ySquares = 0;
+    var sizeSquares = 50;
+
+    drawColorPalette(); //Cria a paleta de cores
+
+    //Associa os eventos do mouse às funções
+    screen.onmousemove = treatMouseMove; //No movimento do mouse, capta o x e y
+
+    screen.onmousedown = enableDraw; //Desenha com o mouse acionado
+
+    screen.onmouseup = disableDraw; //Não desenha com o mouse sem clickar
+
+    screen.onclick = getColor; //Pega a cor ao clicar na área da peleta de cores
+
+</script>
