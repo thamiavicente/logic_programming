@@ -1,4 +1,4 @@
-#  :black_circle: Brush Big and Small :black_small_square:
+#  :white_circle: Brush Big and Small :white_small_square:
 
 ![Badge](https://img.shields.io/static/v1?label=Status&message=Conclued&color=brigthgreen&style=flat&logo=STATUS)
 ![Badge](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blueviolet&style=flat&logo=MIT)
