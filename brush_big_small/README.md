@@ -1,4 +1,4 @@
-#  :atm: ATM :atm:
+#  :black_circle: Brush Big and Small :black_small_square:
 
 ![Badge](https://img.shields.io/static/v1?label=Status&message=Conclued&color=brigthgreen&style=flat&logo=STATUS)
 ![Badge](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blueviolet&style=flat&logo=MIT)
@@ -6,20 +6,9 @@
 
 ## :clipboard: Description
 
-<p> In this simple code, you can withdraw any cash value of your choice. </p>
-<p> The program draws as few notes as possible. </p>
+<p>In this programm, you can make the ball bigger by holding :arrow_up: (shift) or smaller by holding :a: (alt) <p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/logic_programming/atm/atm.html)
-- [Code](https://thamiavicente.github.io/logic_programming/atm)
-
-## :arrow_forward: How to run the code
-<p>1. Clone the repository to your machine</p>
-
-```
-git clone https://thamiavicente.github.io/logic_programming/atm.git
-```
-<p>2. Open it in your favorite text editor</p>
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/brush_big_small/brush_big_small.html)
 
 ## :ballot_box_with_check: Open Tasks
 
