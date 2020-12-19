@@ -11,6 +11,7 @@
 ## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/brush_big_small/brush_big_small.html)
 
 ## :ballot_box_with_check: Open Tasks
+- Write im-game instuctions.
 
 ## :lock: Licence
 
