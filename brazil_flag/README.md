@@ -1,4 +1,4 @@
-#  :br: Brazil Flag :br:
+#  :green_square: Brazil Flag :yellow_square:
 
 ![Badge](https://img.shields.io/static/v1?label=Status&message=Conclued&color=brigthgreen&style=flat&logo=STATUS)
 ![Badge](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blueviolet&style=flat&logo=MIT)
