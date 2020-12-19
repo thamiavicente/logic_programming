@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+
+<!-- Aqui temos o campo para input do número a ser testado e um botão para ativar a função -->
+<h1> Guess the number!</h1>
+<p>Type a number from 1 - 10 and try guess one of the three numbers that was drawn.</p>
+<input/>
+<button>Try</button>
+
+<script>
+
+	function drawn (){ //Inseri um número aleatório onde o último será 10.
+		var lastNumber = 10;
+		return Math.round(Math.random()* lastNumber); //Pega um número aleatório e arredonda para inteiro
+	}
+
+	function drawnNumberArray (numberOfNumbers){ //Cria um array e inputa x números sorteados nele
+		var numbersDrawn = [];
+
+		var start = 1; //Inicia a variável
+		while (start <= numberOfNumbers) { //Enquanto 'start' for menor que a quantidade de número que queremos
+
+			var randonNumber = drawn(); 
+			var match = false; 
+
+			if (randonNumber !== 0){ //Se o número sorteado for diferente de 0
+				for (var position = 0; position < numbersDrawn.length; position++) { //Olha todos os números do array
+					if (numbersDrawn[position] == randonNumber) { //verifica se o número sorteado já está no array
+						match = true; //Se estiver, para.
+						break;
+					}
+				}
+
+				if (match == false) { //Se não estava dentro do array
+					numbersDrawn.push(randonNumber); //Adciona no array
+					start++;
+				}
+
+			}
+		}
+
+		return numbersDrawn; //Retorna o array de números
+	}
+
+
+                    
+	var numbersDrawn = drawnNumberArray(3); //Sorteia um array de 3 números
+
+	// console.log (numbersDrawn); //Imprime os números sorteados no console
+
+	var input = document.querySelector ("input"); //Puxa o conteúdo do input
+
+	input.focus(); //Destaca o input
+
+	function verify (){
+
+		var match = false; //Inicia uma variável
+
+		for (var position = 0; position < numbersDrawn.length; position++) { //Pega cada número do array
+			
+			if (input.value == numbersDrawn[position]) { //Se o número do input é igual ao número dentro do array
+				
+				alert("Congrats, you have a match!"); //Informa ao usuário que ele acertou e para o jogo
+				match = true;
+				break;
+			}
+	}
+
+	if (match == false) { //Se 'match' continuou falso
+
+		alert ("Oh, no! That's wrong."); //Imprime que o usuário errou
+	
+	}
+		input.value = ""; //Apaga o input
+		input.focus(); //Destaca o input
+	}
+
+	var button = document.querySelector("button"); //Seleciona o botão
+
+	button.onclick = verify; //Executa a função quando o botão é clickado
+
+</script>

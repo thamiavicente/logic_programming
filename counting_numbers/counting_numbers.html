@@ -1,0 +1,32 @@
+<!-- LINK DO PROBLEMA: http://dojopuzzles.com/problems/analisando-a-conjectura-de-collatz/ -->  
+    
+<script>
+    var currentOrder; //Inicia algumas variáveis
+    var lastOrder = 0;
+    var orderNumber = 0;
+    var lastNumber = prompt("Up to what number do you want to know?"); //Pergunta ao usuário até que número ele quer saber
+
+    for (var i = 1; i <= lastNumber; i++){ //Até atingir o número limite o programa...
+        n = i;
+        var counter = 1;
+        while (n > 1){ //Verifica se o número é maior que 1
+            if (n%2 == 0){ //Verifica se o número é par
+                n = n/2;
+                counter++;
+            } else if (n%2 > 0){ //Verifica se o número é impar
+                n = 3*n + 1;
+                counter++;
+            }
+        }
+        currentOrder = counter; //Salva o número de sequências de cálculo
+        if (currentOrder > lastOrder) { //Verifica se a quantidade de sequências é maior que a quantidade anterior
+            lastOrder = currentOrder; //Se for, salva os dados da rodada
+            orderNumber = i;
+        }
+        continue;
+    }
+
+    document.write("The number with the most sequence up to " + lastNumber + " is: " + //Imprime o resultado para o usuário
+                orderNumber + ", with a sequence of: " +
+                lastOrder + " numbers.");
+</script>

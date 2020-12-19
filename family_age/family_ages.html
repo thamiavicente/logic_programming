@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakLine() { //Adiciona 2 quebras de linha
+    document.write("<br><br>");
+}
+
+function show(phrase) { //Escreve uma frase e quebra 2 linhas
+    document.write(phrase);
+    breakLine();
+}
+
+var totalFamilyMambers = parseInt(prompt("How many members has your family?")); //Pergunta para o usuário
+
+var number = 1; //Inicia as variáveis
+var totalAges = 0; 
+
+while (number <= totalFamilyMambers) { //Pergunta ao usuário sobre cada familiar
+
+	var age = parseInt(prompt("Type your relative age:"));
+	totalAges = totalAges + age; //Soma as idades
+	number++; //Incrementa o número da variável
+}
+
+var averageAges = totalAges/totalFamilyMambers; //Calcula as idades
+
+show("The average of your realtives ages is " + averageAges); //Imprime as idades
+show ("END"); //Imprime fim
+
+</script>

@@ -1,0 +1,63 @@
+<!-- LINK DO PROBLEMA: http://dojopuzzles.com/problems/words-primas/ -->
+
+<script>
+    var numberWords = parseInt(prompt('How many words do you want to check?')); //Pergunta ao usuário quantas palavras ele quer verificar
+
+    var letters = ['a','b','c','d','e','f','g','h','i','j', //Cada letra tem sua pontuação
+                'k','l','m','n','o','p','q','r','s','t','u', //Que equivale a sua posição no array
+                'v','w','x','y','z','A','B','C','D','E','F',
+                'G','H','I','J','K','L','M','N','O','P','Q',
+                'R','S','T','U','V','W','X','Y','Z'];    
+    
+    var words = []; //Inicia um array
+
+    function addWords (words) {
+        var m = 1; //Variável para contar o número de palavras que já foram
+        while (numberWords > 0) { //Cria um array com as palavras do usuário
+            var word = prompt("What is the " + m + " word do you want to check?");
+            words.push(word);
+            numberWords--;
+            m++;
+        }
+        return words;
+    }
+
+    function checkPrime (sum){ //Verifica se o número é primo
+        if (sum > 1){
+            for (var l = 2; l < sum; l ++){ //Divide a soma por todos os números de 2 até soma
+                if (sum% l == 0) { //Se o resto for 0, então o número não é primo
+                    return false;
+                }
+            }
+            return true; //Se o resto nunca for 0, então é primo
+        }
+    }
+
+    addWords(words); //Criando o array a ser testado
+
+    for (var i = 0; i < words.length; i++){
+        
+        var word = words[i]; //Pega cada palavra do array
+        var sum = 0; //Inicia a variável soma
+        
+        for (var j = 1; j <= word.length; j++){
+            var numericPhrase = []; //Inicia um array
+
+            var letter = word.substring(j-1, j); //Pega cada letra de cada palavra
+            var index = letters.indexOf(letter)+1; //Calcula o index de cada letra
+            numericPhrase.push(index); //Adiciona o valor obtido no array
+
+            for (var k = 0; k < numericPhrase.length; k++){
+                sum += numericPhrase[k]; //Soma todos os valores do array
+            }
+        }
+
+        if (checkPrime(sum) == true){ //Se a função retornou true, é primo
+            document.write("The words " + word + " equals " + sum + " which is a prime number.");
+        } else if (checkPrime(sum) == false){ //Se retornou falso, não é primo
+            document.write("The words " + word + " equals " + sum + " which is not a prime number.");
+        }
+        document.write("<br>");
+    }
+
+</script>

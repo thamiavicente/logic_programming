@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+
+<script>
+	
+	function breakLine(){ //criando função para quebrar a linha do texto
+		document.write("<br>");
+	}
+
+	function show(phrase) { //criando função para imprimir a informação na tela e quebrar a linha
+		document.write(phrase);
+		breakLine();
+	}
+
+	var currentYear = 2020; //ano que o código foi escrito
+	var arrivalPortugueses = 1500; //ano da chegada dos portugueses ao Brasil
+
+	var pastYears = currentYear - arrivalPortugueses; //anos passados da chegada dos portugueses até hoje
+
+	var numberOfGenerations = (pastYears/28).toFixed(2); //quantidade de gerações de brasileiros nascidas com 2 casas decimais (média de 28 para ter filhos)
+
+	show("Has been past " + numberOfGenerations + " generations of brazillians in these " + pastYears + " years.") //impirme na tela a frase com o número de gerações que nasceram no Brasil desde a chegada dos portugueses
+
+</script>

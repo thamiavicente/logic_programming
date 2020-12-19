@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function breakline() { //faz 2 quebras de linha
+	    document.write("<br><br>");
+	}
+
+	function show(phrase) { //imprime uma frase na tela
+	    document.write(phrase);
+	    breakline();
+	}
+
+	var lastYear = parseInt(prompt("Until which year do you wanna know?")); //exibe um alerta para inserir até que ano quer saber se teve copa
+
+	var firstCup = 1930; //ano da primeira copa
+
+	while (firstCup <= lastYear) { //calcula se no ano selecionado teve copa
+
+		show("There was a cup  " + firstCup); //imprime o ano que teve copa
+		firstCup = firstCup + 4; //incrementa 4 no ano impresso (copa é de 4 em 4 anos)
+	}
+
+	show("Those are all the years!"); //imprime uma frase sinalizando que acabaram os anos
+
+</script>

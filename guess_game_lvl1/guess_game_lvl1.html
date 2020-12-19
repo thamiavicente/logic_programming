@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<script>
+
+function breakLine() { //Adiciona 2 quebras de linha
+    document.write("<br><br>");
+}
+
+function show(phrase) { //Escreve uma frase e quebra 2 linhas
+    document.write(phrase);
+    breakLine();
+}
+
+function draft(n) { //Escolhe um número aleatório de 1 a n e arredonda para um número inteiro
+	return Math.round(Math.random() * n);
+}
+
+var lastNumber = 10; //Número limite
+var numberThought = draft(lastNumber); //Escolhe o número
+
+//console.log(numberThought); //Imprime o número sorteado no console
+
+var chances = 1; //Inicia a variável
+
+while (chances <= 3) {
+
+	var numberTyped = parseInt(prompt("Guess the number! (From 1 to " + lastNumber + ").")); //Pede um número para o usuário
+
+	if (numberTyped == numberThought) { //Verifica se o número sorteado é igual ao número do usuário
+
+		show("Congrats, you right!"); //Se é igual, imprime a frase e para
+		break;
+
+	} else if (numberTyped < numberThought){ //Se é diferente gasta 1 chance e informa se o número pensado é maior ou menor
+
+		alert("Strike " + chances + ". It wasn't this time. The number thought is greater than the number entered.");
+
+	} else if (numberTyped > numberThought){
+
+		alert("Strike " + chances + ". It wasn't this time. The number thought is less than the number entered.");
+	}
+
+	chances++; //Incrementa a variável de chance
+}
+
+show("The number thought was " + numberThought + "."); //Imprime o número pensado
+
+</script>

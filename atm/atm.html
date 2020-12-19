@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<!-- LINK DO PROBLEMA: http://dojopuzzles.com/problems/caixa-eletronico/# -->
+
+<script>
+
+    alert('This ATM only withdraws $10, $20, $50 and $100 bills'); //Alert para avisar o usuário quais notas são aceitas
+
+    var withdrawal = prompt('How much do you want to withdraw? (numbers only)'); //Pergunta ao usuário o valor de saque
+
+    function calculatingMoneyBills(value, withdrawalReduced, amountMoneyBills){
+        while(withdrawalReduced - value > 0){ //Enquanto o valor a ser sacado menos o valor da nota for maior que 0
+        withdrawalReduced = withdrawalReduced - value; //O valor do saque é igual ao valor do saque menos o valor da nota
+        amountMoneyBills++; //E adiciona +1 a quantidade de notas
+        }
+
+        return amountMoneyBills; //Retorna a quantidade de notas
+    }
+
+    if(withdrawal%10 == 0 && withdrawal !== "" && withdrawal > 0){ //Se o saque for multiplo de 10, não estiver vazio e for maior que 0
+
+        var amountHundred = calculatingMoneyBills(100, withdrawal, 0); //A quantidade de notas de 100 é o resultado da função
+
+        var valueHundred = withdrawal - (amountHundred*100); //Para calcular a de 50, precisa subitrair as de 100 do valor do saque
+        var amountFifty = calculatingMoneyBills(50, valueHundred, 0); //E depois executar a função com o novo valor
+
+        var valueFifty = withdrawal - ((amountFifty*50) + (amountHundred*100)); //A mesma coisa para de 20 e de 10
+        var amountTwenty = calculatingMoneyBills(20, valueFifty, 0);
+
+        var valueTwenty = withdrawal - ((amountTwenty*20) + (amountFifty*50) + (amountHundred*100));
+        var amountTen = calculatingMoneyBills(10, valueTwenty, 0);
+
+        alert('Uou have drawn the following money bills: \n' + //Imprime as notas e valores para o usuário
+            amountHundred + ' $100 bills. \n' + //O \n serve para quebrar a linha dentro do alert
+            amountFifty + ' $50 bills. \n' +
+            amountTwenty + ' $20 bills. \n' +
+            amountTen + ' $10 bills.');
+
+        document.write( //Imprime na tela do usuário o extrato
+            "<h1>Bank statement</h1>" + 
+            "Bank balance: Infinite" + 
+            "<br>" + 
+            "Withdrawal: R$ " + withdrawal);
+    
+    } else {
+        alert('Please choose a multiple of 10.'); //Se o usuário escolher um valor que não dá pra sacar com as notas que temos
+        document.location.reload(true); //Imprime a mensagem e reinicia o programa
+    }
+
+</script>

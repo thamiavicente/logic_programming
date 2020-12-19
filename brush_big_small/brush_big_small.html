@@ -1,0 +1,62 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var screen = document.querySelector('canvas'); //Iniciando uma área para desenhar
+    var brush = screen.getContext('2d'); //Criando um pincel
+
+    brush.fillStyle = 'grey'; //Escolhendo uma cor
+    brush.fillRect(0, 0, 600, 400); //Pintando a área de cinza
+
+    var minimum = 10; //Iniciando variáveis
+    var maximum = 30;
+    var radius = 10;
+
+    function drawCircle(event) {
+
+        if (event.shiftKey) { //Quando a tecla de shift é clicado
+        radius = radius + 10; //O raio é adicionado em 10
+        }
+
+        if (event.altKey) { //Quando a tecla alt é clickada
+            radius = radius - 5; //O raio é diminuido em 5
+        }
+
+        if (radius >= maximum) { //Se o raio é maior que o valor máximo
+            radius = maximum; //Raio é igual ao máximo
+        }
+
+        if (radius <= minimum){ //Se o raio é menor que o mínimo
+            radius = minimum; //Raio é igual ao mínimo
+        }
+
+        /* ----- Para resetar o valor // To reset value -----
+        else { //Se nenhuma tecla está selecionada
+            radius = 10; //O raio volta a ser 10
+        }*/
+
+        /* ----- Uma outra forma de fazer (Código do professor) -----
+        if (event.shiftKey && event.altKey) {
+
+            alert('Please choose only one key!');
+
+        } else if(event.shiftKey && radius + 10 <= 40) {
+            radius = radius + 10;
+
+        } else if(event.altKey && radius - 5 >= 10) {
+            radius = radius - 5;
+
+        }*/
+
+        var x = event.pageX - screen.offsetLeft; //Posição x do evento de click
+        var y = event.pageY - screen.offsetTop; //Posição y do evento de click
+        brush.fillStyle = 'blue'; //Escolhendo uma cor
+        brush.beginPath(); //Iniciando uma forma
+        brush.arc(x, y, radius, 0, 2 * 3.14); //x, y, raio, angulo inicial, angulo final
+        brush.fill(); //Pintando a bolinha
+        //console.log(x + ',' + y); //Para imprimir x e y no console
+
+    }
+
+    tela.onclick = drawCircle; //Ativa a função desenhar quando o mouse é clickado
+
+</script>

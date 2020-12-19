@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<h1>Grocery list</h1>
+
+<script>
+    var items = []; //Inicia um array
+
+    var amount = parseInt(prompt("How many items do you want to add?")); //Pergunta uma quantidade de itens ao usuário e converte em número
+
+    var counter = 1; //Inicia um contador
+
+    while(counter <= amount) { //Enquanto o contato for menor ou igual que a quantidade
+
+        var item = prompt("Enter item number " + counter); //Pede um ingrediente ao usuário
+
+        var repeatedItem = false; //Inicia um verificador em falso
+
+        for (var i = 0; i < items.length; i++) { //Passa por todos os itens do array
+        	if (items[i] == item){ //Verifica se o ingrediente inserido é igual aos que estão no array
+                repeatedItem = true; //Se for, a função para
+                break;
+            }
+        }
+
+        if (repeatedItem == false) { //Se não
+        items.push(item); //Adiciona no array
+        counter++; //E incrementa 1 ao contador
+        }
+
+    }
+
+    for (var i = 0; i < items.length; i++) {
+        document.write("• " + items[i] + "<br>"); //Imprime cada item do array
+    }
+
+</script>

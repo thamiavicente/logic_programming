@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas'); //Criando uma área para interação
+    var brush = screen.getContext('2d'); //Criando um pincel
+    brush.fillStyle = 'lightgray'; //Escolhendo a cor da área
+    brush.fillRect(0, 0, 600, 400); //Preenchendo a área
+
+    var x = 20; //Iniciando as variáveis
+    var y = 20;
+
+    //Códigos do teclado
+    var left = 37;
+    var up = 38;
+    var right = 39;
+    var bottom = 40;
+
+    //Valores de incremento
+    var move = 10;
+
+    function moveCircle(x, y, radius) {
+
+        brush.fillStyle = 'blue'; //Aqui criamos um círculo
+        brush.beginPath();
+        brush.arc(x, y, radius, 0, 2 * Math.PI); //x, y, raio, angulo inicial, angulo final
+        brush.fill(); //Preenchendo o círculo
+    }
+
+    function cleanCircle() { //Apagando a tela
+
+        brush.clearRect(0, 0, 600, 400);
+    }
+
+    function updateScreen() { //Atualizando o local do círculo
+
+        cleanCircle(); //Limpa a tela
+        moveCircle(x, y, 10); //Cria um novo círculo
+    }
+
+    setInterval(updateScreen, 20); //A cada 20 milisegundos a função é acionada
+
+    function catchKey(event) { //Pega os valores das tecladas acionadas
+        if (event.keyCode == left){ //Se for a seta da esquerda
+            x = x - move; //O x do círculo é igual ao x anterior menos o valor de incremento
+        } else if (event.keyCode == up){ //Se for a seta para cima
+            y = y - move; //O y do círculo é igual ao y anterior menos o valor de incremento
+        }else if (event.keyCode == right){ //Se for a seta para direita
+            x = x + move; //O x do círculo é igual ao x anterior mais o valor de incremento
+        }else if (event.keyCode == bottom){ //Se for a seta para baixo
+            y = y + move; //O y do círculo é igual ao x anterior mais o valor de incremento
+        }
+    }
+
+   document.onkeydown = catchKey; //Quando uma das setas for acionada, ativa a função
+
+</script>

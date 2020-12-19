@@ -1,0 +1,46 @@
+<canvas width="600" height="400"></canvas>
+<br>
+Pick a color <input type="color"> <!-- Input para escolher a cor -->
+
+<script>
+    var screen = document.querySelector('canvas'); //Área de desenho
+    var brush = screen.getContext('2d'); //Para construir formas 2D
+
+    brush.fillStyle = 'lightgrey'; //Preenche a tela de desenho
+    brush.fillRect(0, 0, 600, 400); //Retangulo: x inicial, y inicial, x final, y final
+
+    var drawing = false; //Para não desenhar a todo momento
+
+    function drawCircle(event) {
+
+        var colorPicker = document.querySelector('input'); //Puxa a cor do input
+        var chosenColor = colorPicker.value; //Puxa o valor da cor do input
+
+        if(drawing) {
+            var x = event.pageX - screen.offsetLeft; //Puxa o x da área de click
+            var y = event.pageY - screen.offsetTop; //Puxa o y da área de click
+            brush.fillStyle = chosenColor; //Muda a cor do pincel
+            brush.beginPath(); //Começa a desenhar
+            brush.arc(x, y, 10, 0, 2 * 3.14); //x, y, raio, angulo inicial, angulo final
+            brush.fill(); //Preenche a forma (ponta do pincel)
+        }
+        //console.log(x + ',' + y); Para visualizar o x e y do click
+    }
+
+    screen.onmousemove = drawCircle; //Continua desenhando enquanto o mouse se mexe
+
+    function enableDrawing() { 
+
+        drawing = true;
+    }
+
+    function disableDrawing() {
+
+        drawing = false;
+    }
+
+    screen.onmousedown = enableDrawing; //Ativa a função de desenhar com o click do mouse
+
+    screen.onmouseup = disableDrawing; //Desativa a função de desenhar com o click do mouse
+
+</script>

@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	var screen = document.querySelector('canvas'); //Cria uma área de desenho
+	var brush = screen.getContext('2d'); //Cria um pincel
+
+	//Retangulo
+	brush.fillStyle = 'green'; //Escolher a cor
+	brush.fillRect(50, 50, 500, 300); //Desenhando um retangulo (x inicial, y inicial, x final, y final)
+
+	//Losango
+	brush.fillStyle = 'yellow'; //Escolher a cor
+	brush.beginPath(); //Inicia a forma
+	brush.moveTo(100, 200); //Movendo o pincel até o ponto inicial
+	brush.lineTo(300, 75); //Desenha uma linha até o ponto final
+	brush.lineTo(500, 200); //Desenha uma linha até o ponto final
+	brush.lineTo(300, 325); //Desenha uma linha até o ponto final
+	brush.fill(); //Preenche a forma
+
+	//Circulo
+	brush.fillStyle = 'darkblue'; //Escolher a cor
+	brush.beginPath(); //Inicia a forma
+	brush.arc(300, 200, 70, 0, 2 * 3.14); //x, y, raio, angulo incial, angulo final
+	brush.fill(); //Preenche a forma
+
+</script>
+
+<!-- Texto -->
+<h1 style="color:white; font-size: 19; font-family: arial; margin-top: -210; margin-left:239; position: absolute;">
+	Gol da Marta!
+</h1>

@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function breakLine() { //cria uma quebra de linha
+        document.write("<br>");
+    }
+
+    function show(phrase) { //imprime uma frase e quebra uma linha
+        document.write(phrase);
+        breakLine();
+    }
+
+    var age = parseInt(prompt("Hi! Tell me your age.")); //pergunta ao usuário a idade dele
+    var hasDriverLicense = prompt("And do you have a driver license? Answer Y or N."); //pergunta ao usuário se ele tem carteira de motorista
+
+    if (age >= 18 && hasDriverLicense == "Y") { //verifica se o motorista tem carteira e idade para dirigir
+    	show("So you can drive!"); //tendo os dois, imprime que pode dirigir
+    } else {
+    	show("So you can't drive!"); //não tendo um dos dois, imprime que não pode dirigir
+    }
+
+</script>

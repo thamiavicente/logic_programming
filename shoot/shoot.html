@@ -1,0 +1,74 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas'); //Cria área pra interação
+    var brush = screen.getContext('2d'); //Cria um pincel 2D
+
+    brush.fillStyle = 'lightgray'; //Pinta a área de cinza
+    brush.fillRect(0, 0, 600, 400);
+
+    var radius = 10; //Inicia variáveis
+    var randomX;
+    var randomY;
+
+    function drawCircle(x, y, radius, color) { //Função para desenhar circulos
+
+        brush.fillStyle = color; //Escolher cor
+        brush.beginPath(); //Iniciar desenho
+        brush.arc(x, y, radius, 0, 2 * Math.PI); //x, y, raio, angulo inicial, angulo final
+        brush.fill(); //Preenche o círculo
+
+    }
+
+    function clearScreen() { //Limpa a tela
+        
+        brush.clearRect(0, 0, 600, 400); //Apaga a tela
+        brush.fillStyle = 'lightgray';
+        brush.fillRect(0, 0, 600, 400); //E desenha de novo
+
+    }
+
+    function drawTarget(x,y) { //Função para desenhar o alvo
+
+        drawCircle(x, y, radius+20, 'red'); //Desenha 3 circulos com posições aleatórias
+        drawCircle(x, y, radius+10, 'white');
+        drawCircle(x, y, radius, 'red');
+
+    }
+
+    function draftPosition(maximum) { //Função para sortear os valores das posições
+
+        return Math.floor(Math.random() * maximum); //Valor arredondado de um número aleatório de 0 a maximum
+
+    }
+
+    function updateScreen() { //Função para atualizar a tela
+        clearScreen(); //Limpa a tela
+        randomX = draftPosition(600); //Sorteia um número até 600
+        randomY = draftPosition(400); //Sorteia um número até 400
+        drawTarget(randomX, randomY); //Usa os números sorteados para criar o alvo
+    }
+
+    setInterval(updateScreen, 1000); //A cada 1000 milisegundos a tela é atualizada
+
+    function shoot(event) { //Função para verificar se o alvo foi acertado
+
+        var x = event.pageX - screen.offsetLeft; //Pega o x do local do click desprezando o espaço fora da área de interação
+        var y = event.pageY - screen.offsetTop; //Mesma coisa pro y
+
+        if((x > randomX - radius) //Verifica se os locais do click e do alvo coincidem
+        && (x < randomX + radius) //Leva em conta o local clickado e a posição gerada menos o valor do raio do círculo
+        && (y > randomY - radius)
+        && (y < randomY + radius)) {
+
+            alert('You got it'); //Se os números batem, o usuário acertou o alvo
+
+        }
+
+
+}
+
+screen.onclick = shoot; //O click na tela dispara o evento que verifica se o usuário acertou o alvo
+
+</script>
