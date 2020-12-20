@@ -6,8 +6,17 @@
 
 ## :clipboard: Description
 
-<p> In this simple code, you can withdraw any cash value of your choice. </p>
-<p> The program draws as few notes as possible. </p>
+<p> This is my answer for the exercise: </p>
+
+[ATM](http://dojopuzzles.com/problems/caixa-eletronico/#)
+
+> Develop a program that simulates the delivery of money when a customer withdraws from an ATM. The basic requirements are:
+> 
+> - Deliver the small number of notes;
+> - Check if withdrawals are possible with the available notes;
+> - Infinite customer balance;
+> - The amount of money is infinite. You can put a finite amount of money to increase the difficulty of the problem;
+> - Available notes: $ 100,00; $ 50,00; $ 20,00 and $ 10,00
 
 ## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/atm/atm.html)
 
