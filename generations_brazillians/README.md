@@ -6,7 +6,7 @@
 
 ## :clipboard: Description
 
-<p>This code is a calculation of how many generations of brazillians has been born.</p>
+<p>This code is a calculation of how many generations of brazillians has been born since 1500 (year of the discovery of Brazil).</p>
 
 ## :computer: Deploy
 - [Deploy](https://thamiavicente.github.io/generations_brazillians/generations_brazillians.html)
