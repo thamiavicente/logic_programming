@@ -8,21 +8,9 @@
 
 <p>This's a little game about the world cups years.</p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/worldcup_years/worldcup_years.html)
-- [Code](https://github.com/thamiavicente/worldcup_years/blob/master/worldcup_years.html)
-
-## :arrow_forward: How to run the code
-<p>1. Clone the repository to your machine</p>
-
-```
-git clone https://github.com/thamiavicente/worldcup_years.git
-```
-<p>2. Open it in your favorite text editor</p>
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/worldcup_years/worldcup_years.html)
 
 ## :ballot_box_with_check: Open Tasks
-
-- I could change the code to say "was" when the year is in the past and "will"when it's in the future.
 
 ## :lock: Licence
 
