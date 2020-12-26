@@ -7,7 +7,7 @@
 
 <p>So, have fun playing with the programs and leave a issue if you think something here could be better.</p>
 
-## :arrow_forward: How to run the code (im your computer)
+## :arrow_forward: How to run the code (in your computer)
 <p>1. Clone the repository to your machine</p>
 
 ```
