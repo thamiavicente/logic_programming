@@ -1,4 +1,4 @@
-#  :family_woman_woman_girl_boy: Family Age :family_woman_woman_girl_boy:
+#  :family_woman_woman_girl_boy: Family Ages :family_woman_woman_girl_boy:
 
 ![Badge](https://img.shields.io/static/v1?label=Status&message=Conclued&color=brigthgreen&style=flat&logo=STATUS)
 ![Badge](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blueviolet&style=flat&logo=MIT)
@@ -8,7 +8,7 @@
 
 <p>Here you will find a simple game to calculate the average age of your family.</p>
 
-## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/family_age/family_age.html)
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/family_ages/family_ages.html)
 
 ## :ballot_box_with_check: Open Tasks
 
