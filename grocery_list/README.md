@@ -1,4 +1,4 @@
-#  :atm: ATM :atm:
+#  :leafy_green: Grocery List :leafy_green:
 
 ![Badge](https://img.shields.io/static/v1?label=Status&message=Conclued&color=brigthgreen&style=flat&logo=STATUS)
 ![Badge](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blueviolet&style=flat&logo=MIT)
