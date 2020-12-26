@@ -11,6 +11,6 @@
 <p>1. Clone the repository to your machine</p>
 
 ```
-git clone https://thamiavicente.github.io/logic_programming/atm.git
+git clone https://github.com/thamiavicente/logic_programming.git
 ```
 <p>2. Open it in your favorite text editor</p>
