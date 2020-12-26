@@ -6,8 +6,7 @@
 
 ## :clipboard: Description
 
-<p> In this simple code, you can withdraw any cash value of your choice. </p>
-<p> The program draws as few notes as possible. </p>
+<p>Here you will find a simple game to calculate the average age of your family.</p>
 
 ## :computer: Deploy
 - [Deploy](https://thamiavicente.github.io/logic_programming/atm/atm.html)
