@@ -9,17 +9,9 @@
 <p>In this little game you enter your age and whether or not you have a driver's license and receive a message if you can drive or not.</p>
 <p>*The game considers the age of driving in Brasil.</p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/driver-license/driver-license.html)
-- [Code](https://github.com/thamiavicente/driver-license/blob/master/driver-license.html)
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/driver_license/driver_license.html)
 
-## :arrow_forward: How to run the code
-<p>1. Clone the repository to your machine</p>
-
-```
-git clone https://github.com/thamiavicente/driver-license.git
-```
-<p>2. Open it in your favorite text editor</p>
+## :ballot_box_with_check: Open Tasks
 
 ## :lock: Licence
 
