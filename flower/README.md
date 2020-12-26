@@ -8,17 +8,9 @@
 
 <p>This code is a drawing of a flower that I made with JavaScript elements.</p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/flower/flower.html)
-- [Code](https://github.com/thamiavicente/flower/blob/master/flower.html)
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/flower/flower.html)
 
-## :arrow_forward: How to run the code
-<p>1. Clone the repository to your machine</p>
-
-```
-git clone https://github.com/thamiavicente/flower.git
-```
-<p>2. Open it in your favorite text editor</p>
+## :ballot_box_with_check: Open Tasks
 
 ## :lock: Licence
 
