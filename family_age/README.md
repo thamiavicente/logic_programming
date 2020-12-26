@@ -8,17 +8,7 @@
 
 <p>Here you will find a simple game to calculate the average age of your family.</p>
 
-## :computer: Deploy
-- [Deploy](https://thamiavicente.github.io/logic_programming/family_age/family_age.html)
-- [Code](https://thamiavicente.github.io/logic_programming/family_age)
-
-## :arrow_forward: How to run the code
-<p>1. Clone the repository to your machine</p>
-
-```
-git clone https://thamiavicente.github.io/logic_programming/atm.git
-```
-<p>2. Open it in your favorite text editor</p>
+## :computer: [Deploy](https://thamiavicente.github.io/logic_programming/family_age/family_age.html)
 
 ## :ballot_box_with_check: Open Tasks
 
